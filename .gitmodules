@@ -1,0 +1,3 @@
+[submodule "cookbooks-tasks"]
+	path = cookbooks-tasks
+	url = git://github.com/ecylmz/cookbooks-tasks.git

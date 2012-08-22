@@ -1,0 +1,14 @@
+#!/usr/bin/ruby
+
+require 'fileutils'
+
+abort "Please install chef gem" unless Gem::Specification::find_all_by_name("chef").any?
+abort "Please create ~/cook/src/solo.rb file " unless File.exist? "~/cook/src/solo.rb"
+
+root   = "#{ENV['HOME']}/cook"
+config = "#{root}/src/solo.rb"
+task   = "#{root}/cookbooks-tasks/tasks/#{ARGV[0]}.json"
+
+abort "#{task} does not exist" unless File.exist? task
+
+exec '/usr/bin/ruby', '-S', 'chef-solo', '-c', config, '-j', task
