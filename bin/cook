@@ -3,7 +3,7 @@
 require 'fileutils'
 
 abort "Please install chef gem" unless Gem::Specification::find_all_by_name("chef").any?
-abort "Please create ~/cook/src/solo.rb file " unless File.exist? "~/cook/src/solo.rb"
+abort "Please create #{ENV['HOME']}/cook/src/solo.rb file " unless File.exist? "#{ENV['HOME']}/cook/src/solo.rb"
 
 root   = "#{ENV['HOME']}/cook"
 config = "#{root}/src/solo.rb"

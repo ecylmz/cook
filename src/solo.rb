@@ -1,4 +1,4 @@
-root = "~/cook"
+root = "#{ENV['HOME']}/cook"
 
 log_level        :info
 verbose_logging   nil
